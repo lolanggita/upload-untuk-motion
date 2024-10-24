@@ -1,0 +1,103 @@
+# while int(NIM / 10**5) <= 0:
+    #     print("Maaf 🙏🏻, NIM Anda kurang dari 6 angka")
+    #     Name = input("Masukkan Nama: ")
+    #     NIM = int(input("Masukkan NIM: "))
+    #     Quiz = int(input("Masukkan Nilai Kuis: "))
+    #     Task = int(input("Masukkan Nilai Tugas: "))
+    #     Exam = int(input("Masukkan Nilai Ujian: "))
+
+    # while int(NIM / 10**17) > 0:
+    #     print("Maaf 🙏🏻, NIM Anda terlalu panjang.")
+    #     Name = input("Masukkan Nama: ")
+    #     NIM = int(input("Masukkan NIM: "))
+    #     Quiz = int(input("Masukkan Nilai Kuis: "))
+    #     Task = int(input("Masukkan Nilai Tugas: "))
+    #     Exam = int(input("Masukkan Nilai Ujian: "))
+    
+def Find_seat(N, S):
+    choice_chair = -1 # Menyimpan data kursidistanceMax_distanceilih
+    distance = -1  # Menyimpan data jarak minimal
+
+    for i in range(N):
+        if S[i] == "K":
+            left_distance = 0
+            right_distance = 0
+            for j in range(i-1, -1, -1):
+                left_distance += 1 # Menghitung jarak terjauh dari kiri
+                if S[i] == "T":
+                    break
+            for j in range( i + 1, N):
+                right_distance += 1 # Menghitung jarak terjauh dari kanan
+                if S[i] == "T":
+                    break
+
+            Max_distance = max(i, N - i + 1)
+            Min_distance = min(left_distance, right_distance)
+
+            if Max_distance > Min_distance:
+                distance = Max_distance
+                choice_chair = distance + 1
+
+            else:
+                distance = Min_distance
+                choice_chair = distance 
+
+
+    if choice_chair == -1:
+        return "Penuh"
+    else:
+        return choice_chair 
+
+# Input dari Pengguna
+N = int(input())
+S = input()
+# Menampilkan Hasil kursi yang Terpilih
+print( Find_seat(N, S) )
+
+
+
+def Find_seat(N, S):
+    choice_chair = -1 # Menyimpan data kursidistanceMax_distanceilih
+    distance = -1  # Menyimpan data jarak minimal
+
+    for i in range(N):
+        if S[i] == "K":
+            # left_distance = 0
+            # right_distance = 0
+            # for j in range(i-1, i, 1):
+            #     left_distance += 1 # Menghitung jarak terjauh dari kiri
+            #     if S[i] == "T":
+            #         break
+            # for j in range( i + 1, N):
+            #     right_distance += 1 # Menghitung jarak terjauh dari kanan
+            #     if S[i] == "T":
+            #         break
+            ranger = 0
+            for j in range(i-1, i, 1):
+                ranger += 1
+                if S[i] == "T":
+                    break
+                return ranger
+        
+            Max_distance = max(ranger)
+            Min_distance = min(ranger)
+
+            if Max_distance > Min_distance:
+                distance = Max_distance
+                choice_chair = distance + 1
+
+            else:
+                distance = Min_distance
+                choice_chair = distance 
+
+
+    if choice_chair == -1:
+        return "Penuh"
+    else:
+        return choice_chair 
+
+# Input dari Pengguna
+N = int(input())
+S = input()
+# Menampilkan Hasil kursi yang Terpilih
+print( Find_seat(N, S) )

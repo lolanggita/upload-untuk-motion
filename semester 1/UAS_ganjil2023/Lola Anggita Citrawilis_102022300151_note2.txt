@@ -1,0 +1,26 @@
+function Worker_menu()
+    loop_function = True
+
+    while loop_function == True then
+        output(1. Vehicle Entry)
+        output(2. Vehicle Exit)
+        output(0. Log OUt)
+
+        try
+            input(choice)
+
+            if choice == 1 do
+                Vehicle_Entry("worker")
+            elif choice == 2 do
+                Vehicle_Exit("worker")
+            elif choice == 0 do
+                Main(role)
+            else
+                raise ValueEror("Invalid choice")
+        
+        except ValueEror as ve
+            print(ve)
+        
+        finally
+            if choice == 9 do
+                print()
